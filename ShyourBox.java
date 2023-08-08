@@ -80,15 +80,24 @@ public class ShyourBox {
     }
 
     public void initProducts(){
-        this.products.add(new Veggie("Bayam",100000, 20, false));
-        this.products.add(new Fruit("Jeruk",100000, 20, false));
+        this.products.add(new Veggie("Bayam",1000, 20, false));
+        this.products.add(new Veggie("Jamur",1000, 15, true));
+        this.products.add(new Veggie("Wortel",1000, 15, true));
+
+        this.products.add(new Fruit("Jeruk",10000, 20, false));
+        this.products.add(new Fruit("Apel",13000, 50, true));
+        this.products.add(new Fruit("Semangka",9000, 23, false));
+        
         this.products.add(new Diary("Keju", 30000, 20, "06 08 2023"));
+        this.products.add(new Diary("Yogurt", 15000, 10, "06 08 2026"));
     }
 
     public void initCustomers(){
         this.customers.add(new Customer("Hana"));
         this.customers.add(new Customer("Sakura"));
-        this.customers.add(new Customer("Anyujin"));
+        this.customers.add(new Customer("Jennifer"));
+        this.customers.add(new GoldCustomer("Anyujin"));
+        this.customers.add(new GoldCustomer("Chaewon"));
     }
 
 

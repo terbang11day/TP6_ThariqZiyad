@@ -1,3 +1,6 @@
+package product.natural;
+import product.Product;
+
 public class Veggie extends Product{
     
     private boolean isOrganic;

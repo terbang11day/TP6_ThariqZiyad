@@ -1,3 +1,5 @@
+package order;
+import product.Product;
 public class OrderItem {
     private Product product;
 

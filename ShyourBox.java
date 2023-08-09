@@ -1,6 +1,13 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import customer.Customer;
+import customer.GoldCustomer;
+import product.Product;
+import product.natural.Fruit;
+import product.natural.Veggie;
+import product.processed.Diary;
+
 public class ShyourBox {
     private ArrayList<Product> products = new ArrayList<Product>();
     private ArrayList<Customer> customers = new ArrayList<Customer>();

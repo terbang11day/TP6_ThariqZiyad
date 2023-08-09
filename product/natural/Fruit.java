@@ -1,3 +1,6 @@
+package product.natural;
+import product.Product;
+
 public class Fruit extends Product{
     private boolean isLocal;
 

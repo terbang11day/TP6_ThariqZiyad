@@ -1,32 +1,31 @@
 package order;
+
 import product.Product;
+
 public class OrderItem {
     private Product product;
-
     private int quantity;
 
     public OrderItem(Product product, int quantity) {
         this.product = product;
-        this.quantity  = quantity;
-
-    };
+        this.quantity = quantity;
+    }
 
     public double getFinalPrice() {
-        double discount = this.product.checkDiscount(this.quantity);
-        double price = (double) this.product.getPrice() * this.quantity;
-
-        return (price*(100-discount)/100);
+        int discount = product.checkDiscount(quantity);
+        double price = product.getPrice() * quantity;
+        return price * (1 - discount / 100.0);
     }
 
     public Product getProduct() {
-        return this.product;
+        return product;
     }
 
-    public int getQuantity(){
-        return this.quantity;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public String toString(){
-        return String.format("%s  %d kg  %f", this.product.getName(), this.quantity, this.getFinalPrice());  
+    public String toString() {
+        return String.format("%s  %d kg  %.2f", product.getName(), quantity, getFinalPrice());
     }
 }

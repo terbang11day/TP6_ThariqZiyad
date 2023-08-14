@@ -1,27 +1,47 @@
 package product.natural;
 import product.Product;
 
-public class Fruit extends Product{
+/**
+ * Fruit adalah subkelas dari Product yang merepresentasikan produk buah.
+ */
+public class Fruit extends Product {
     private boolean isLocal;
 
-    public Fruit(String name, int price, int stok, boolean isLocal){
-        super(name, price, stok);
+    /**
+     * Konstruktor untuk membuat objek Fruit.
+     *
+     * @param name    Nama produk buah.
+     * @param price   Harga produk buah.
+     * @param stock   Stok produk buah.
+     * @param isLocal true jika buah lokal, false jika buah impor.
+     */
+    public Fruit(String name, int price, int stock, boolean isLocal) {
+        super(name, price, stock);
         this.isLocal = isLocal;
     }
 
-    public int checkDiscount(int quantity){
-        if(this.isLocal){
-            if(quantity >= 5)
-                return 30;
-            else if(quantity >=3 )
-                return 20;
+    /**
+     * Menghitung jumlah diskon yang diberikan berdasarkan kuantitas pembelian.
+     *
+     * @param quantity Kuantitas pembelian produk.
+     * @return Jumlah diskon yang diberikan.
+     */
+    @Override
+    public int checkDiscount(int quantity) {
+        int discount = 0;
+        if (isLocal) {
+            if (quantity >= 5) {
+                discount = 30;
+            } else if (quantity >= 3) {
+                discount = 20;
+            }
+        } else {
+            if (quantity >= 5) {
+                discount = 20;
+            } else if (quantity >= 3) {
+                discount = 15;
+            }
         }
-        else{
-             if(quantity >= 5)
-                return 20;
-            else if(quantity >=3 )
-                return 15;
-        }
-        return 0;
+        return discount;
     }
 }

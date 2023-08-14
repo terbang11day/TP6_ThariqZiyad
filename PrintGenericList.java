@@ -12,7 +12,7 @@ public class PrintGenericList<T> {
             System.out.println("Daftar kosong.");
         } else {
             for (T item : list) {
-                System.out.println(item.toString());
+                System.out.println(item);
             }
         }
     }

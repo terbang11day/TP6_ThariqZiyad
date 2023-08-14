@@ -8,11 +8,20 @@ import product.Product;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Kelas Customer merepresentasikan seorang pelanggan yang dapat berbelanja dan melakukan checkout.
+ */
 public class Customer implements CanShop {
+
     protected String name;
     protected Cart cart;
     protected List<Order> orderHistory;
 
+    /**
+     * Konstruktor untuk membuat objek Customer dengan nama tertentu.
+     *
+     * @param name Nama pelanggan.
+     */
     public Customer(String name) {
         this.name = name;
         this.cart = new Cart();
@@ -39,14 +48,29 @@ public class Customer implements CanShop {
         }
     }
 
+    /**
+     * Mendapatkan nama pelanggan.
+     *
+     * @return Nama pelanggan.
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Mendapatkan riwayat pesanan pelanggan.
+     *
+     * @return Daftar pesanan yang pernah dilakukan.
+     */
     public List<Order> getOrderHistory() {
         return orderHistory;
     }
 
+    /**
+     * Mendapatkan keranjang belanja pelanggan.
+     *
+     * @return Keranjang belanja pelanggan.
+     */
     public Cart getCart() {
         return cart;
     }
